@@ -19,6 +19,11 @@ const DayOfWeek = t.model('DayOfWeek', {
   seats: t.number,
 });
 
+const Address = t.model('Address', {
+  address: t.string,
+  building: t.string
+});
+
 const AvailabilityPlanTypes = t.enumeration('AvailabilityPlanTypes', [
   'availability-plan/day',
 ]);
@@ -37,7 +42,7 @@ const ProductPublicData = t.model('ProductPublicData', {
   brand: t.maybe(t.string),
   category: t.maybe(t.string),
   level: t.maybe(t.string),
-  location: t.maybe(t.string),
+  location: t.maybe(Address),
   subCategory: t.maybe(t.string),
   phoneNumber: t.maybe(t.string),
 });

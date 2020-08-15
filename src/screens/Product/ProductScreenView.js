@@ -148,7 +148,7 @@ const ProductScreen = ({
             <DescriptionTab
               text={product.description}
               user={author}
-              location={product.publicData.location}
+              location={product.publicData.location.address}
               geolocation={product.geolocation}
               isLoadingDates={isLoadingDates}
               navigationToCalendar={navigationToCalendar}

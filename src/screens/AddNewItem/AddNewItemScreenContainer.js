@@ -400,7 +400,7 @@ export default hoistStatics(
             props.level.trim().length > 0 &&
             props.description.trim().length > 0 &&
             props.price.toString().trim().length > 0 &&
-            props.location.trim().length > 0,
+            props.location.address.trim().length > 0,
         );
       },
     ),

@@ -21,7 +21,7 @@ function loginUser(flow, store) {
       store.setAuthorizationStatus(true);
       NavigationService.navigateToApp();
     } catch (err) {
-      flow.failed();
+      flow.failed(err,true);
       AlertService.showAlert(
         i18n.t('alerts.signInError.title'),
         i18n.t('alerts.signInError.message'),
@@ -84,7 +84,7 @@ function resetPassword(flow, store) {
       yield store.Api.resetPassword({ email });
       flow.success();
     } catch (err) {
-      flow.failed();
+      flow.failed(err,true);
     }
   };
 }
@@ -98,7 +98,7 @@ function updatePassword(flow, store) {
       flow.success();
       NavigationService.navigateToAuth();
     } catch (err) {
-      flow.failed();
+      flow.failed(err,true);
     }
   };
 }
@@ -119,7 +119,7 @@ function logout(flow, store) {
       store.setAuthorizationStatus(false);
       NavigationService.navigateToAuth();
     } catch (err) {
-      flow.failed();
+      flow.failed(err,true);
       AlertService.showAlert(
         i18n.t('alerts.signOutError.title'),
         i18n.t('alerts.signOutError.message'),
